@@ -1,10 +1,30 @@
-[![Build Linux](https://github.com/nasa/cfs/actions/workflows/build-cfs.yml/badge.svg)](https://github.com/nasa/cfs/actions/workflows/build-cfs.yml)
-[![Build RTEMS 5](https://github.com/nasa/cFS/actions/workflows/build-cfs-rtems5.yml/badge.svg)](https://github.com/nasa/cFS/actions/workflows/build-cfs-rtems5.yml)
-[![LGTM Alerts](https://img.shields.io/lgtm/alerts/github/nasa/cFS.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/nasa/cFS/alerts/?mode=list)
-[![LGTM Grade](https://img.shields.io/lgtm/grade/cpp/g/nasa/cFS.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/nasa/cFS/context:cpp)
-[![LGTM Grade](https://img.shields.io/lgtm/grade/python/g/nasa/cFS.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/nasa/cFS/context:python)
+# Prerequisites
+This tool is part of the cFS modified TASTE toolchain (cFS Creator). Before we can work with cFS Creator we need tools to be available on the computer and some libraries to compile against.
 
-# Core Flight System - BUNDLE
+1. Install the TASTE VM following the instructions in https://gitrepos.estec.esa.int/taste/taste-setup. <strong>All the following instructions assume you are using the TASTE VM.</strong>
+2. Replace the misc folder with our modified one following the instructions in [cFS misc](https://gitlab.com/aurora-software/cFS-misc).
+3. Replace kazoo with our modified Kazoo following the instructions in [cFS Kazoo](https://github.com/HugoValente11/cFS-Kazoo).
+4. Setup our modified QtCreator environment, cFS Creator, following the instructions in [cFS Creator](https://gitlab.com/aurora-software/cFS-Creator).
+5. Add the cFS runtime following the instructions in [TASTE cFS Runtime](https://github.com/HugoValente11/TASTE-cFS-Runtime).
+6. Replace the local configuration files for Qt with our modified ones following the instructions in [cFS Local Config](https://gitlab.com/aurora-software/cFS-local-config).
+
+# How to use the toolchain
+It works exactly the same way as the original TASTE version. You can use the `taste` command to create a new project and it should load the modified QtCreator environment, cFS Creator.
+
+# Build the TASTE cFS Runtime
+Ensure the following software are installed: Make, CMake, GCC, and Git.  To setup the cFS BUNDLE directly from the latest set of interoperable repositories:
+
+    git clone https://github.com/HugoValente11/TASTE-cFS-Runtime ~/tool-src/TASTE-cFS-Runtime
+    cd ~/tool-src/TASTE-cFS-Runtime
+    git submodule init
+    git submodule update
+
+Copy in the default makefile:
+
+    cp cfe/cmake/Makefile.sample Makefile
+
+
+# Core Flight System - Description
 
 The Core Flight System (cFS) is a generic flight software architecture framework used on flagship spacecraft, human spacecraft, cubesats, and Raspberry Pi.  This repository is a bundle of submodules that make up the cFS framework.  Note the "lab" apps are intended as examples only, and enable this bundle to build, execute, receive commands, and send telemetry.  This is not a flight distribution, which is typically made up of the cFE, OSAL, PSP, and a selection of flight apps that correspond to specific mission requirements.
 
@@ -88,20 +108,6 @@ If you'd like to unsubscribe, send an email with the word *unsubscribe* to cfs-c
 
 You can email the cFS Product Team at cfs-program@lists.nasa.gov to explore partnerships and other arrangements for in-depth support.
 
-## Setup
-
-Ensure the following software are installed: Make, CMake, GCC, and Git.  To setup the cFS BUNDLE directly from the latest set of interoperable repositories:
-
-    git clone https://github.com/nasa/cFS.git
-    cd cFS
-    git submodule init
-    git submodule update
-
-Copy in the default makefile and definitions:
-
-    cp cfe/cmake/Makefile.sample Makefile
-    cp -r cfe/cmake/sample_defs sample_defs
-
 ## Build and Run
 
 The cFS Framework including sample applications will build and run on the pc-linux platform support package (should run on most Linux distributions), via the steps described in https://github.com/nasa/cFE/tree/master/cmake/README.md.  Quick-start is below:
@@ -181,4 +187,3 @@ The following list is user submitted, and not CCB controlled.  They are released
     - TBD
   - Other PSPs
     - TBD
-
