@@ -36,7 +36,12 @@ void BitStream_Init(BitStream* pBitStrm, unsigned char* buf, long count)
 
 void ByteStream_AttachBuffer(ByteStream* pStrm, unsigned char* buf, long count)
 {
+    // Mock implementation or leave empty for stub
+}
 
+void BitStream_AttachBuffer(BitStream* pBitStrm, unsigned char* buf, long count)
+{
+    // Mock implementation or leave empty for stub
 }
 
 flag asn1SccMyInteger_Encode(const asn1SccMyInteger* pVal, BitStream* pBitStrm, int* pErrCode, flag bCheckConstraints)
