@@ -28,3 +28,13 @@ int32 DATAVIEW_Init(void)
     return UT_DEFAULT_IMPL(DATAVIEW_Init);
 
 } /* End DATAVIEW_LIB_Init */
+
+void BitStream_Init(BitStream* pBitStrm, unsigned char* buf, long count)
+{
+    // Mock implementation or leave empty for stub
+}
+
+flag asn1SccMyInteger_Encode(const asn1SccMyInteger* pVal, BitStream* pBitStrm, int* pErrCode, flag bCheckConstraints)
+{
+    // Mock implementation or leave empty for stub
+}
