@@ -139,7 +139,7 @@ unit_tests:
 # Grab lcov baseline before running tests
 test:
 	lcov --capture --initial --directory $(O)/$(ARCH) --output-file $(O)/$(ARCH)/coverage_base.info
-	(cd $(O)/$(ARCH) && ctest -O ctest.log)
+	(cd $(O)/$(ARCH) && ctest -O ctest.log --rerun-failed --output-on-failure)
 
 lcov:
 	lcov --capture --rc lcov_branch_coverage=1 --directory $(O)/$(ARCH) --output-file $(O)/$(ARCH)/coverage_test.info
