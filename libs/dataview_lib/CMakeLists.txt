@@ -19,3 +19,7 @@ fsw/src/asn1crt_encoding.c fsw/src/asn1crt.c
 # is stored in fsw/public_inc.  Using "target_include_directories" is the 
 # preferred method of indicating this (vs. directory-scope "include_directories").
 target_include_directories(dataview_lib PUBLIC fsw/public_inc)
+
+if (ENABLE_UNIT_TESTS)
+   add_subdirectory(ut-stubs)
+ endif (ENABLE_UNIT_TESTS)
