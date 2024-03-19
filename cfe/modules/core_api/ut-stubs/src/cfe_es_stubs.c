@@ -955,3 +955,16 @@ CFE_Status_t CFE_ES_WriteToSysLog(const char *SpecStringPtr, ...)
 
     return UT_GenStub_GetReturnValue(CFE_ES_WriteToSysLog, CFE_Status_t);
 }
+
+// Define a mock version of CFE_ES_ParseFileEntry
+CFE_Status_t CFE_ES_ParseFileEntry(const char **TokenList, uint32 NumTokens)
+{
+    UT_GenStub_SetupReturnBuffer(CFE_ES_ParseFileEntry, int32);
+
+    UT_GenStub_AddParam(CFE_ES_ParseFileEntry, const char **, TokenList);
+    UT_GenStub_AddParam(CFE_ES_ParseFileEntry, uint32, NumTokens);
+
+    UT_GenStub_Execute(CFE_ES_ParseFileEntry, Basic, NULL);
+
+    return UT_GenStub_GetReturnValue(CFE_ES_ParseFileEntry, int32);
+}
