@@ -29,27 +29,44 @@ int32 DATAVIEW_Init(void)
 
 } /* End DATAVIEW_LIB_Init */
 
-void BitStream_Init(BitStream* pBitStrm, unsigned char* buf, long count)
+void BitStream_Init(BitStream *pBitStrm, unsigned char *buf, long count)
 {
     // Mock implementation or leave empty for stub
 }
 
-void ByteStream_AttachBuffer(ByteStream* pStrm, unsigned char* buf, long count)
+void ByteStream_AttachBuffer(ByteStream *pStrm, unsigned char *buf, long count)
 {
     // Mock implementation or leave empty for stub
 }
 
-void BitStream_AttachBuffer(BitStream* pBitStrm, unsigned char* buf, long count)
+void BitStream_AttachBuffer(BitStream *pBitStrm, unsigned char *buf, long count)
 {
     // Mock implementation or leave empty for stub
 }
 
-flag asn1SccMyInteger_Encode(const asn1SccMyInteger* pVal, BitStream* pBitStrm, int* pErrCode, flag bCheckConstraints)
+flag asn1SccMyInteger_Encode(const asn1SccMyInteger *pVal, BitStream *pBitStrm, int *pErrCode, flag bCheckConstraints)
 {
-    // Mock implementation or leave empty for stub
+    // Initialize a UT_GenStub call, specifying the data type for the return value.
+    UT_GenStub_SetupReturnBuffer(asn1SccMyInteger_Encode, int32);
+    // You can add parameters if you need to track their usage or values, for now, we'll skip this.
+    // Execute the stub function, this will check if there is a deferred return value set.
+    UT_GenStub_Execute(asn1SccMyInteger_Encode, Basic, NULL);
+    // Get the return value from the deferred space, defaulting to a specific value if not set.
+    // Note: Replace 'DEFAULT_RETURN_VALUE' with the actual default you wish to use, e.g., TRUE or FALSE.
+    return UT_GenStub_GetReturnValue(asn1SccMyInteger_Encode, int32);
 }
 
-flag asn1SccMyInteger_Decode(asn1SccMyInteger* pVal, BitStream* pBitStrm, int* pErrCode)
+flag asn1SccMyInteger_Decode(asn1SccMyInteger *pVal, BitStream *pBitStrm, int *pErrCode)
 {
-    // Mock implementation or leave empty for stub
+    // Initialize a UT_GenStub call, specifying the data type for the return value.
+    UT_GenStub_SetupReturnBuffer(asn1SccMyInteger_Decode, int32);
+
+    // You can add parameters if you need to track their usage or values, for now, we'll skip this.
+
+    // Execute the stub function, this will check if there is a deferred return value set.
+    UT_GenStub_Execute(asn1SccMyInteger_Decode, Basic, NULL);
+
+    // Get the return value from the deferred space, defaulting to a specific value if not set.
+    // Note: Replace 'DEFAULT_RETURN_VALUE' with the actual default you wish to use, e.g., TRUE or FALSE.
+    return UT_GenStub_GetReturnValue(asn1SccMyInteger_Decode, int32);
 }
