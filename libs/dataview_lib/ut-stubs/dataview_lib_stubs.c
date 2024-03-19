@@ -9,6 +9,7 @@
  * The "utstubs.h" provides the generic stub framework from UT Assert
  */
 #include "utstubs.h"
+#include "utgenstub.h"
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /*                                                                 */
