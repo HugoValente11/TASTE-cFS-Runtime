@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SBN_BASE=`pwd` # TODO: compute?
+SBN_BASE=$(pwd) # TODO: compute?
 
 if [ $# -lt 1 ]
 then
@@ -18,23 +18,23 @@ then
 fi
 
 mkdir -p "${APP_BASE}/sbn"
-ln -sf "${SBN_BASE}/fsw" "${APP_BASE}/sbn/"
-ln -sf "${SBN_BASE}/ut-stubs" "${APP_BASE}/sbn/"
-ln -sf "${SBN_BASE}/unit-test" "${APP_BASE}/sbn/"
-ln -sf "${SBN_BASE}/CMakeLists.txt" "${APP_BASE}/sbn/"
+ln "${SBN_BASE}/fsw" "${APP_BASE}/sbn/"
+ln "${SBN_BASE}/ut-stubs" "${APP_BASE}/sbn/"
+ln "${SBN_BASE}/unit-test" "${APP_BASE}/sbn/"
+ln "${SBN_BASE}/CMakeLists.txt" "${APP_BASE}/sbn/"
 
 for protocol in ${SBN_BASE}/modules/protocol/*
 do
-    b=`basename ${protocol}`
+    b=$(basename ${protocol})
     l="${APP_BASE}/sbn_${b}"
     rm "${l}"
-    ln -sf "${protocol}" "${l}"
+    ln "${protocol}" "${l}"
 done
 
 for filter in ${SBN_BASE}/modules/filter/*
 do
-    b=`basename ${filter}`
+    b=$(basename ${filter})
     l="${APP_BASE}/sbn_f_${b}"
     rm "${l}"
-    ln -sf "${filter}" "${l}"
+    ln "${filter}" "${l}"
 done
