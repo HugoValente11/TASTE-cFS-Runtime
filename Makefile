@@ -159,7 +159,7 @@ osalguide:
 	$(MAKE) --no-print-directory -C "$(O)" osalguide
 
 run:
-	make prep && make && make install && cd build/exe/cpu1 && sudo ./core-cpu1
+	make prep && make && make install && cd build/exe/demo && sudo ./core-demo
 
 # Make all the commands that use the build tree depend on a flag file
 # that is used to indicate the prep step has been done.  This way
